@@ -23,7 +23,7 @@ void elevator(int floor)
 	if (floor == 0)
 	{
 		cout << "Привет подвал!";
-		return;
+		return; 
 	}
 	cout << "Мы на " << floor << " этаже" << endl;
 	elevator(floor-1);
