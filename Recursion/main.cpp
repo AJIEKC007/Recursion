@@ -43,10 +43,10 @@ cout << power(a, n);
 #endif // POWER
 int n;
 cout << "Введите до какого числа вывести числа Фибоначчи : "; cin >> n;
-for (int i = 0; febonacci(i)<=n; i++){	cout << febonacci(i) << "\t";}
+for (int i = 0; febonacci(i)<=n; i++){cout << febonacci(i) << "\t";}
 
 cout << "\nВведите какое количество чисел Фибоначчи вывести: "; cin >> n;
-for (int i = 0; i<n; i++){	cout << febonacci(i) << "\t";}
+for (int i = 0; i<n; i++){cout << febonacci(i) << "\t";}
 
 }
 
