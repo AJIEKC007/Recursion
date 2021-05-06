@@ -5,11 +5,12 @@ using namespace std;
 void elevator(int floor);
 int Factorial(int n);
 double power(double a, int n);
+int febonacci(int n);
 
 
 //#define RECURCION_BASICS
 //#define FACTORIAL
-
+//#define POWER
 void main()
 {
 	setlocale(LC_ALL, "russian");
@@ -32,12 +33,20 @@ Factorial(floor);*/
 	cout << Factorial(n);
 }
 #endif // FACTORIAL
-
+#ifdef POWER
 int a; //основание
 int n; // степень
 cout << "Введите основание степени: "; cin >> a;
 cout << "Введите показатель степени: "; cin >> n;
 cout << power(a, n);
+
+#endif // POWER
+int n;
+cout << "Введите до какого числа вывести числа Фибоначчи : "; cin >> n;
+for (int i = 0; febonacci(i)<=n; i++){	cout << febonacci(i) << "\t";}
+
+cout << "\nВведите какое количество чисел Фибоначчи вывести: "; cin >> n;
+for (int i = 0; i<n; i++){	cout << febonacci(i) << "\t";}
 
 }
 
@@ -68,4 +77,12 @@ double power(double a, int n)
 	if(n<0)return 1/a*power(a,n+1);
 	*/
 	return n == 0 ? 1 : n > 0 ? a * power(a, n - 1):1/a*power(a,n+1);
+}
+
+int febonacci(int n)
+{
+	/*if (n < 2)return n;
+	return febonacci(n - 1) + febonacci(n - 2);*/
+	
+	return n < 2 ? n : febonacci(n - 1) + febonacci(n - 2);
 }
