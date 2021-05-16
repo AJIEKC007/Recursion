@@ -6,11 +6,14 @@ void elevator(int floor);
 int Factorial(int n);
 double power(double a, int n);
 int febonacci(int n);
+void fibonacci1(int n, int a = 0, int b = 1);
+void fibonacci2(int n, unsigned long long int a, unsigned long long int b);
 
 
 //#define RECURCION_BASICS
 //#define FACTORIAL
 //#define POWER
+//#define FEBONACCI
 void main()
 {
 	setlocale(LC_ALL, "russian");
@@ -41,12 +44,15 @@ cout << "Введите показатель степени: "; cin >> n;
 cout << power(a, n);
 
 #endif // POWER
+#ifdef FEBONACCI
 int n;
 cout << "Введите до какого числа вывести числа Фибоначчи : "; cin >> n;
-for (int i = 0; febonacci(i)<=n; i++){cout << febonacci(i) << "\t";}
+for (int i = 0; febonacci(i) <= n; i++) { cout << febonacci(i) << "\t"; }
 
 cout << "\nВведите какое количество чисел Фибоначчи вывести: "; cin >> n;
-for (int i = 0; i<n; i++){cout << febonacci(i) << "\t";}
+for (int i = 0; i < n; i++) { cout << febonacci(i) << "\t"; }
+#endif // FEBONACCI
+
 
 }
 
@@ -85,4 +91,18 @@ int febonacci(int n)
 	return febonacci(n - 1) + febonacci(n - 2);*/
 	
 	return n < 2 ? n : febonacci(n - 1) + febonacci(n - 2);
+}
+
+void fibonacci1(int n, int a, int b)
+{
+	if (a > n) return;
+	cout << a << "\t";
+	return fibonacci1(n, b, a + b);
+}
+
+void fibonacci2(int n, unsigned long long int a, unsigned long long int b)
+{
+	if (a == 0) return;
+	cout << a << "\t";
+	return fibonacci1(n-1, b, a + b);
 }
